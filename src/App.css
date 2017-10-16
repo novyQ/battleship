@@ -5,7 +5,7 @@
 
 .header {
   background-color: #9698FC;
-  padding: 0.85%;
+  padding: 0.85% 0;
   height: 10vh;
   margin-bottom: 20px;
   display: grid;
@@ -39,6 +39,7 @@
 .header-child{
   height: 7vh;
   margin-right: 7px;
+  padding: 1.7% 0;
 }
 
 .board-view {
@@ -155,13 +156,30 @@
 @media only screen and (max-device-width: 1024px),
 only screen and (max-device-width: 1024px) and (-webkit-device-pixel-ratio:2)
   {
+  .header{
+    padding-top: 1.7%;
+    margin-bottom: 10px;
+  }
 
   .header-one {
-    width: 130%;
+    width: 90%;
+    margin-left: 10px;
+  }
+
+  .header-two {
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  .header-three {
+    width: 101%;
+    margin-left: 20px;
+
   }
 
   .header-four {
-    width: 200%;
+    width: 180%;
+    margin-left: 25px;
   }
 
   .header-five {
@@ -170,10 +188,6 @@ only screen and (max-device-width: 1024px) and (-webkit-device-pixel-ratio:2)
 
   .header-six {
     display: none;
-  }
-
-  .hearder {
-    height: 12vh;
   }
 
   .board-view {
@@ -192,6 +206,7 @@ only screen and (max-device-width: 1024px) and (-webkit-device-pixel-ratio:2)
   }
 
   .ship-ui-container {
+    margin-top: 5px;
     width: 60%;
     float: right;
     display: grid;
@@ -218,6 +233,19 @@ only screen and (max-device-width: 1024px) and (-webkit-device-pixel-ratio:2)
 
 @media only screen and (max-device-width: 667px){
 
+  .header {
+    padding-top: 2.5%;
+    margin-bottom: 0px;
+  }
+
+  .header-two {
+    margin-left: 12px;
+  }
+
+  .header-four {
+    width: 120%;
+  }
+
   .header-five {
     display: none;
   }
@@ -239,7 +267,7 @@ only screen and (max-device-width: 1024px) and (-webkit-device-pixel-ratio:2)
   }
 
   .ships {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%
   }
 
@@ -264,10 +292,6 @@ only screen and (max-device-width: 1024px) and (-webkit-device-pixel-ratio:2)
     margin-bottom: 9px;
   }
 
-  .header {
-    margin-bottom: 0px;
-  }
-
   .ships {
     margin-top: 0px;
   }
@@ -276,5 +300,16 @@ only screen and (max-device-width: 1024px) and (-webkit-device-pixel-ratio:2)
     margin-top: 0px;
   }
 
+}
+
+@media only screen and (max-device-width: 320px){
+   .header-four {
+    width: 100%;
+  }
+
+ .ships {
+    margin-top: 5px;
+    width: 100%
+  }
 }
 
