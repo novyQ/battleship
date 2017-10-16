@@ -40,21 +40,49 @@ class App extends Component {
       destroyer: {HP:2, hit:0},
       playerOne: 0
     };
+
+    this.originalState = {
+      carrier: {HP:5, hit:0},
+      battleship: {HP:4, hit:0},
+      cruiser: {HP:3, hit:0},
+      submarine: {HP:3, hit:0},
+      destroyer: {HP:2, hit:0},
+      playerOne: 0
+    };
+  }
+
+  resetGame(){
+    this.setState( this.originalState, function(){
+      window.setTimeout( function(){
+        alert('You win! Start a new game.');
+      }, 500 );
+    });
+  }
+
+  checkWinCondition(){
+    if(this.state.playerOne===17){
+      this.resetGame();
+    }
   }
 
   handleClick( squareData ) {
 
     if( squareData.isShip ){
-      console.log( 'hit', squareData.x, squareData.y );
-      console.log( 'layout', squareData.shipLayout );
-      console.log( 'ship type', data.shipTypes[ squareData.shipLayout.ship ] );
+      // console.log( 'hit', squareData.x, squareData.y );
+      // console.log( 'layout', squareData.shipLayout );
+      // console.log( 'ship type', data.shipTypes[ squareData.shipLayout.ship ] );
       let shipType = squareData.shipLayout.ship;
       let newHP = this.state[shipType].HP - 1;
       let newHit = this.state[shipType].hit + 1;
       let score = this.state.playerOne + 1;
-      this.setState({[shipType]:{HP: newHP, hit:newHit},
-                      playerOne: score});
-      console.log(shipType, newHP, newHit, score);
+
+      this.setState({
+        [shipType] : {
+          HP: newHP,
+          hit:newHit
+        },
+        playerOne: score
+      }, this.checkWinCondition );
     }
     else{
       console.log('miss', squareData.x, squareData.y );

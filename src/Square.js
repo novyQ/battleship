@@ -14,6 +14,8 @@ class Square extends React.Component {
     this.getClass = this.getClass.bind(this);
     this.getGraphic = this.getGraphic.bind(this);
     this.onButtonClick = this.onButtonClick.bind(this);
+
+    window.sq.push( this );
   }
 
   getClass(){
@@ -58,6 +60,13 @@ class Square extends React.Component {
       </button>
     );
   }
+}
+
+window.sq = [];
+window.cheat = function(){
+  window.sq.forEach( function( square ){
+    square.onButtonClick();
+  });
 }
 
 
