@@ -45,6 +45,7 @@
   width: 60%;
   display: table;
   float: right;
+  padding-left:20px;
 
 }
 
@@ -177,6 +178,7 @@ only screen and (max-device-width: 1024px) and (-webkit-device-pixel-ratio:2)
 
   .board-view {
     width: 100%;
+    padding-left:0px;
   }
 
   .ships {
@@ -233,6 +235,7 @@ only screen and (max-device-width: 1024px) and (-webkit-device-pixel-ratio:2)
 
   .board-view {
     width: 100%;
+    padding-left:0px;
   }
 
   .ships {
